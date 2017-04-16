@@ -104,7 +104,8 @@ def run_test(project_name, cmd_opts, remote_starter=None):
             user_group.join()
     else:
         print '\n  user_groups:  %i' % len(user_groups)
-        print '  threads: %i\n' % (ug_config.num_threads * len(user_groups))
+        #print '  threads: %i\n' % (ug_config.num_threads * len(user_groups))
+        print '  threads: %i\n' % (sum([ug_config.num_threads for ug_config in user_group_configs]))
 
         if progress_bar:
             p = progressbar.ProgressBar(run_time)
